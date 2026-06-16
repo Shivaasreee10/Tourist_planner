@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Plan | Sign In</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="auth-page auth-signin">
+
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="https://www.pexels.com/download/video/25921606/" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Sign In Card -->
+  <main class="auth-card">
+    <h1>Sign In</h1>
+
+    <form id="signinForm" class="auth-form">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        autocomplete="email"
+        required
+      >
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+      >
+
+      <p class="form-message" id="signinMessage" aria-live="polite"></p>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>
+      Don't have an account?
+      <a href="signup.html">Sign Up</a>
+    </p>
+
+    <button type="button" id="guestLoginBtn" class="guest-btn">
+      Continue as Guest
+    </button>
+  </main>
+
+  <script>
+    document.getElementById("guestLoginBtn").addEventListener("click", () => {
+      localStorage.setItem("activeUser", "Guest");
+
+      /* Change this to your main page */
+      window.location.href = "main.html";
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
